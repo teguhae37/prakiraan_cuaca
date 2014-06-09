@@ -3,26 +3,6 @@
     $propinsi = $_POST['propinsi'];
     $kota = $_POST['kota'];
     
-    
-    /*$url = "xml/propinsi_".$propinsi."_1.xml";
-    $sUrl = file_get_contents($url, False);
-    $xml = simplexml_load_string($sUrl);
-    foreach($xml->Isi->Row as $row){
-        if($row->Kota==$kota){
-            $kecepatan_1 = (30-$row->KecepatanAngin)/10;
-            $kecepatan_angin_1 = $row->KecepatanAngin;
-            $lintang_1 = $row->Lintang;
-            $bujur_1 = $row->Bujur;
-            $suhu_min_1 = $row->SuhuMin;
-            $suhu_max_1 = $row->SuhuMax;
-            $kelembapan_min_1 = $row->KelembapanMin;
-            $kelembapan_max_1 = $row->KelembapanMax;
-            $arah_angin_1 = $row->ArahAngin;
-            $cuaca_1 = $row->Cuaca;
-        }
-    }*/
-    
-    //$url = "xml/propinsi_".$propinsi."_2.xml";
     $url = "http://data.bmkg.go.id/propinsi_".$propinsi."_2.xml";
     $sUrl = file_get_contents($url, False);
     $xml = simplexml_load_string($sUrl);
@@ -41,7 +21,6 @@
         }
     }
     
-    //$url_wa = "http://api.wolframalpha.com/v1/query?input=".$kota."&appid=KPL2RU-X9W23YRPWG";
     $url_wa = "http://api.wolframalpha.com/v1/query?input=".$kota."&appid=U6J9PG-PQ7VP75W2K";
     $sUrl_wa = file_get_contents($url_wa, False);
     $xml_wa = simplexml_load_string($sUrl_wa);
